@@ -30,9 +30,9 @@ El backend está implementado en Python y maneja la lógica del chatbot y las in
 
 - `assistant.py`: Contiene la lógica principal del chatbot.
 - `helpers.py`: Funciones auxiliares utilizadas por `assistant.py`.
-- `Documento_para_ChatBot.pdf` y `Documento_para_ChatBot.txt`: Documentos de referencia utilizados por el chatbot.
+- `Documento_para_ChatBot.pdf`: Documentos de referencia utilizados por el chatbot.
 
 Para iniciar el backend:
 
 ```bash
-python main.py
+uvicorn main:app --reload
