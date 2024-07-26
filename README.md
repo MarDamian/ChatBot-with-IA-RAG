@@ -21,6 +21,7 @@ Para ejecutar este proyecto, necesitarás tener instalado:
     ```
 
 4. Configura las variables de entorno en los archivos `.env` en la raíz y en el directorio `Backend`.
+   mas informacion sobre la api Key : https://console.mistral.ai/api-keys/
 
 ## Uso
 
