@@ -36,3 +36,6 @@ Para iniciar el backend:
 
 ```bash
 uvicorn main:app --reload
+
+![image](https://github.com/user-attachments/assets/f8c91a26-bac7-4b83-be83-e1346da2bae1)
+
