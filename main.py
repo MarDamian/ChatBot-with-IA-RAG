@@ -35,10 +35,11 @@ class Message(BaseModel):
     message: str
     
 # Monta los archivos estáticos del frontend
-app.mount("/", StaticFiles(directory="Frontend", html=True), name="frontend")
+#app.mount("/", StaticFiles(directory="Frontend", html=True), name="frontend")
 
 # Inicialización de la base de datos vectorial
 index, chunks = initialize_faiss_index(pdf_path)
+
 
 @app.post("/chat")
 async def chat(message: Message):
@@ -77,5 +78,5 @@ async def chat(message: Message):
 
 if __name__ == '__main__':
     import uvicorn
-    #uvicorn.run(app, host='0.0.0.0', port=8000)
-    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))
+    uvicorn.run(app, host='0.0.0.0', port=8000)
+    #uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", 8000)))

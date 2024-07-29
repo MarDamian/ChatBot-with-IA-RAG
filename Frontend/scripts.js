@@ -12,24 +12,29 @@ async function sendMessage() {
     if (messageText !== '') {
         addMessage(messageText, 'user');
         messageInput.value = '';
-        //https://coico.vercel.app/api/chat
-        //const response = await fetch('http://localhost:8000/chat', {
-        const response = await fetch('https://coico.vercel.app/api/chat', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ message: messageText })
-        });
 
-        if (response.ok) {
-            const data = await response.json();
-            addMessage(data.response, 'bot');
-        } else {
-            addMessage('Error: No se pudo obtener una respuesta.', 'bot');
+        try {
+            const response = await fetch('https://coico.vercel.app/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: messageText })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                addMessage(data.response, 'bot');
+            } else {
+                addMessage('Error: No se pudo obtener una respuesta.', 'bot');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            addMessage('Error: No se pudo conectar con el servidor.', 'bot');
         }
     }
 }
+
 
 function addMessage(text, sender) {
     const messageContainer = document.createElement('div');
