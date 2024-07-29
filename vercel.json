@@ -18,6 +18,10 @@
       {
         "src": "/(.*)",
         "dest": "Frontend/$1"
+      },
+      {
+        "src": "/bot3.png",
+        "dest": "Frontend/bot3.png"
       }
     ]
   }
