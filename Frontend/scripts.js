@@ -5,6 +5,9 @@ document.getElementById('message-input').addEventListener('keypress', function(e
     }
 });
 
+//Prueba local : http://127.0.0.1:8000/chat
+//Prueba : https://coico.vercel.app/chat
+
 async function sendMessage() {
     const messageInput = document.getElementById('message-input');
     const messageText = messageInput.value.trim();
@@ -12,8 +15,7 @@ async function sendMessage() {
     if (messageText !== '') {
         addMessage(messageText, 'user');
         messageInput.value = '';
-        //Prueba local : http://127.0.0.1:8000/chat
-        //Prueba : https://coico.vercel.app/chat
+
         try {
             const response = await fetch('https://coico.vercel.app/chat', {
                 method: 'POST',
@@ -27,6 +29,9 @@ async function sendMessage() {
                 const data = await response.json();
                 addMessage(data.response, 'bot');
             } else {
+                // Imprime detalles del error de la respuesta
+                const errorText = await response.text();
+                console.error(`Error: ${response.status} - ${response.statusText}. Detalles: ${errorText}`);
                 addMessage('Error: No se pudo obtener una respuesta.', 'bot');
             }
         } catch (error) {
@@ -35,6 +40,7 @@ async function sendMessage() {
         }
     }
 }
+
 
 
 function addMessage(text, sender) {
