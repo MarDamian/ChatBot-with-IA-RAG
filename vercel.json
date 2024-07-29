@@ -8,14 +8,6 @@
       {
         "src": "Frontend/**",
         "use": "@vercel/static"
-      },
-      {
-        "src": "Backend/assistant.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "Backend/helpers.py",
-        "use": "@vercel/python"
       }
     ],
     "routes": [
