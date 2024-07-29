@@ -20,7 +20,7 @@
         "dest": "Frontend/$1"
       },
       {
-        "src": "/bot3.png",
+        "src": "/Bot3.png",
         "dest": "Frontend/bot3.png"
       }
     ]
