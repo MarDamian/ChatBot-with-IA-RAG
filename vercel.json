@@ -6,34 +6,14 @@
         "use": "@vercel/python"
       },
       {
-        "src": "Frontend/styles.css",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "Frontend/scripts.js",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "Frontend/Bot3.png",
+        "src": "Frontend/**",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/main.py"
-      },
-      {
-        "src": "/styles.css",
-        "dest": "/Frontend/styles.css"
-      },
-      {
-        "src": "/scripts.js",
-        "dest": "/Frontend/scripts.js"
-      },
-      {
-        "src": "/Bot3.png",
-        "dest": "/Frontend/Bot3.png"
+        "dest": "main.py"
       },
       {
         "src": "/(.*)",
