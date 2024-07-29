@@ -6,7 +6,15 @@
         "use": "@vercel/python"
       },
       {
-        "src": "Frontend/index.html",
+        "src": "Frontend/styles.css",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "Frontend/scripts.js",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "Frontend/Bot3.png",
         "use": "@vercel/static"
       }
     ],
@@ -14,6 +22,18 @@
       {
         "src": "/api/(.*)",
         "dest": "/main.py"
+      },
+      {
+        "src": "/styles.css",
+        "dest": "/Frontend/styles.css"
+      },
+      {
+        "src": "/scripts.js",
+        "dest": "/Frontend/scripts.js"
+      },
+      {
+        "src": "/Bot3.png",
+        "dest": "/Frontend/Bot3.png"
       },
       {
         "src": "/(.*)",
