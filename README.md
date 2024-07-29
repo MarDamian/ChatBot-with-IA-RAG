@@ -24,6 +24,8 @@ Para ejecutar este proyecto, necesitarás tener instalado:
 
    Mas informacion sobre la api Key: https://console.mistral.ai/api-keys/
 
+Para probar de forma local editar enpoint en 'Frontend/scripts.js'
+
 ## Uso
 
 ### Backend
