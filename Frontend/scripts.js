@@ -14,7 +14,7 @@ async function sendMessage() {
         messageInput.value = '';
         //https://coico.vercel.app/api/chat
         //const response = await fetch('http://localhost:8000/chat', {
-        const response = await fetch('https://coico.vercel.app', {
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
