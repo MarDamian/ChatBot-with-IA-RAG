@@ -40,17 +40,23 @@ async def chat(message: Message):
     retrieved_chunk = [chunks[i] for i in I.tolist()[0]]
 
     prompt = f"""
-    La información del contexto se encuentra a continuación.
+    Contexto relevante:
     ---------------------
     {retrieved_chunk}
     ---------------------
-    Sea lo más breve posible sin extenderse demasiado con la respuesta.
-    Si no encuentras la respuesta solicitada informa que no tienes información al respecto.
-    Mantente con una actitud de disponibilidad.
-    Si la pregunta no tiene sentido para ti, sugiere que reenvíes la pregunta ya que no entendiste y no des información que no esté relacionada.
+    Instrucciones para la respuesta:
+    1. **Brevedad**: Responde de manera concisa y directa. Evita extenderte más de lo necesario.
+    2. **Relevancia**: La respuesta debe estar basada en el contexto proporcionado. Si la pregunta no está relacionada con la información del contexto, indica claramente que no hay información relevante disponible.
+    3. **Manejo de preguntas irrelevantes**:
+       - Si la pregunta no tiene relación con el contexto o no se puede responder con la información proporcionada, informa al usuario de manera cortés y clara que no se puede proporcionar una respuesta útil en base a la información disponible.
+       - Sugiere al usuario que reformule su pregunta para que se ajuste mejor al contexto o consulte otras fuentes para obtener una respuesta.
+    4. **Actitud y tono**: Mantén una actitud de disponibilidad y amabilidad en todo momento. Evita dar respuestas que puedan parecer despectivas o poco útiles.
+
     Consulta: {user_message}
     Respuesta:
     """
+
+
 
     def run_mistral(user_message, model="mistral-medium-latest"):
         messages = [ChatMessage(role="user", content=user_message)]
