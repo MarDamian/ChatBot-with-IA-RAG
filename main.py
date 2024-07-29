@@ -41,7 +41,7 @@ class Message(BaseModel):
 index, chunks = initialize_faiss_index(pdf_path)
 
 
-@app.post("api/chat")
+@app.post("/api/chat")
 async def chat(message: Message):
     user_message = message.message
 
