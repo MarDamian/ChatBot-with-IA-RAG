@@ -35,7 +35,7 @@ class Message(BaseModel):
     message: str
     
 # Monta los archivos estáticos del frontend
-#app.mount("/", StaticFiles(directory="Frontend", html=True), name="frontend")
+app.mount("/", StaticFiles(directory="Frontend", html=True), name="frontend")
 
 # Inicialización de la base de datos vectorial
 index, chunks = initialize_faiss_index(pdf_path)
